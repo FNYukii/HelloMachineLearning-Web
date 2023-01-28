@@ -19,7 +19,7 @@ function Screen(props: Props) {
   }, [])
 
   return (
-    <main className="pt-8 bg-gray-200 h-screen px-4 lg:px-0">
+    <main className="pt-8 px-4 lg:px-0">
 
       <div className="p-4 bg-white rounded-xl mx-auto w-full lg:width-lg">
 
