@@ -5,17 +5,22 @@ import Screen from "../components/Screen"
 function HelloAPIScreen() {
 
 	const [result, setResult] = useState("")
+	const [isLoading, setIsLoading] = useState(false)
 
 	async function hello() {
+
+		setIsLoading(true)
 
 		const result = axios
 			.get('http://localhost:8000')
 			.then(response => {
 
+				setIsLoading(false)
 				setResult(response.data)
 			})
 			.catch((error) => {
 
+				setIsLoading(false)
 				setResult(`${error}`)
 			})
 	}
@@ -27,10 +32,19 @@ function HelloAPIScreen() {
 
 			<button type="button" onClick={hello} className="mt-2 py-1 px-4 rounded-full border border-gray-500 text-gray-500 hover:bg-gray-200 transition">Submit</button>
 
-			<p className="mt-2">
-				<span className="text-gray-500">結果: </span>
-				<span>{result}</span>
-			</p>
+			<div className="mt-2">
+
+				{isLoading &&
+					<p>Loading...</p>
+				}
+
+				{!isLoading &&
+					<p>
+						<span className="text-gray-500">結果: </span>
+						<span>{result}</span>
+					</p>
+				}
+			</div>
 		</Screen>
 	)
 }
