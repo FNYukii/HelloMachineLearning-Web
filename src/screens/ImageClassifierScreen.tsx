@@ -4,6 +4,7 @@ import Screen from "../components/Screen"
 
 function ImageClassifierScreen() {
 
+	// eslint-disable-next-line
   const [image, setImage] = useState<File | null>(null)
 
   return (
