@@ -10,9 +10,9 @@ function HelloAPIScreen() {
 	async function hello() {
 
 		setIsLoading(true)
-
-		const result = axios
-			.get('http://localhost:8000')
+		
+		axios
+			.get(`${process.env.REACT_APP_API_DOMAIN}`)
 			.then(response => {
 
 				setIsLoading(false)
