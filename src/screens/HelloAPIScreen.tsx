@@ -27,7 +27,10 @@ function HelloAPIScreen() {
 
 			<button type="button" onClick={hello} className="mt-2 py-1 px-4 rounded-full border border-gray-500 text-gray-500 hover:bg-gray-200 transition">Submit</button>
 
-			<p className="mt-2">結果: {result}</p>
+			<p className="mt-2">
+				<span className="text-gray-500">結果: </span>
+				<span>{result}</span>
+			</p>
 		</Screen>
 	)
 }
