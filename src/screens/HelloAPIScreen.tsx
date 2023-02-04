@@ -28,7 +28,7 @@ function HelloAPIScreen() {
 	return (
 		<Screen title="Hello API">
 
-			<p>APIとの通信を行います。</p>
+			<p>HelloMachineLeanring-APIとの通信を行います。</p>
 
 			<button type="button" onClick={hello} className="mt-2 py-1 px-4 rounded-full border border-gray-500 text-gray-500 hover:bg-gray-200 transition">Submit</button>
 
