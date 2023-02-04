@@ -13,7 +13,7 @@ function ImageClassifierScreen() {
 
 		setIsLoading(true)
 
-		axios.post(`${process.env.REACT_APP_API_DOMAIN}`, image, {
+		axios.post(`${process.env.REACT_APP_API_DOMAIN}/image-classifier`, image, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},
