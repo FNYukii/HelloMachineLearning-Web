@@ -11,12 +11,21 @@ function ImageClassifierScreen() {
 
 	async function classificate() {
 
+		// 画像が選択されてないなら終了
+		if (!image) return
+
 		setIsLoading(true)
 
-		axios.post(`${process.env.REACT_APP_API_DOMAIN}/image-classifier`, image, {
+		// POSTで送信するデータを用意
+		const formData = new FormData()
+		formData.append("file", image)
+
+		// APIに送信
+		axios
+			.post(`${process.env.REACT_APP_API_DOMAIN}/image-classifier`, formData, {
 				headers: {
-					'Content-Type': 'multipart/form-data',
-				},
+					"Content-Type": "multipart/form-data",
+				}
 			})
 			.then(response => {
 
